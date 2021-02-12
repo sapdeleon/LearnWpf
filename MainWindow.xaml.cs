@@ -23,14 +23,6 @@ namespace LearnWpf
         public MainWindow()
         {
             InitializeComponent();
-
-            List<User> users = new List<User>();
-
-            users.Add(new User() { Id = 1, Name = "John Doe", Birthday = new DateTime(1971, 7, 23), Address = "123 Pike Lane" });
-            users.Add(new User() { Id = 2, Name = "Jane Doe", Birthday = new DateTime(1974, 1, 2), Address = "123 Pike Lane" });
-            users.Add(new User() { Id = 3, Name = "Thomas Lee", Birthday = new DateTime(1967, 7, 23), Address = "123 Pike Lane" });
-
-            dgMain.ItemsSource = users;
         }
 
         public void CreateTable(string[] headers)
@@ -43,13 +35,16 @@ namespace LearnWpf
                 dgMain.Columns.Add(c);
             }
         }
-    }
 
-    public class User
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public DateTime Birthday { get; set; }
-        public string Address { get; set; }
+        private void btnSubmit_Click(object sender, RoutedEventArgs e)
+        {
+            List<UserModel> users = new List<UserModel>();
+
+            users.Add(new UserModel() { Id = 1, Name = "John Doe", Birthday = new DateTime(1971, 7, 23), Address = "123 Pike Lane" });
+            users.Add(new UserModel() { Id = 2, Name = "Jane Doe", Birthday = new DateTime(1974, 1, 2), Address = "123 Pike Lane" });
+            users.Add(new UserModel() { Id = 3, Name = "Thomas Lee", Birthday = new DateTime(1967, 7, 23), Address = "123 Pike Lane" });
+
+            dgMain.ItemsSource = users;
+        }
     }
 }

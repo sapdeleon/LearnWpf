@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LearnWpf"
-        mc:Ignorable="d"
+        mc:Ignorable="d" FontSize="16"
         Title="Learn WPF" Height="450" Width="800">
     <Grid Margin="10">
         <TabControl>
@@ -12,7 +12,6 @@
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="60" />
-                        <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="100" />
                     </Grid.ColumnDefinitions>
@@ -25,8 +24,9 @@
                     <Label Content="WPF Calculator" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" />
                     <!-- Second Row - Controls -->
                     <Label Content="Query: " Grid.Row="1" Grid.Column="0" />
-                    <TextBox x:Name="queryText" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Margin="5" />
-                    <Button x:Name="btnSubmit" Content="Submit" Grid.Row="1" Grid.Column="3" Margin="5" />
+                    <TextBox x:Name="queryText" Grid.Row="1" Grid.Column="1" Margin="5" />
+                    <Button x:Name="btnSubmit" Content="Submit" Grid.Row="1" Grid.Column="3" Margin="5" 
+                        Click="btnSubmit_Click" />
                     <!-- Third Row - Data -->
                     <DataGrid x:Name="dgMain" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" 
                         AutoGenerateColumns="False" HorizontalAlignment="Left">
